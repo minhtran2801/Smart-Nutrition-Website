@@ -3,4 +3,5 @@ Repo for our WSU professional experience project building an Alexa voice interfa
 
 GROUP NAME: KS1909
 
-Read README.docx for instructions on how to open the website. ALL DATABASE CONFIGURATION ARE CORRECTLY SET.
+Read README.docx for instructions on how to open the website.
+Database configuration are correctly set to our nutrition database.
