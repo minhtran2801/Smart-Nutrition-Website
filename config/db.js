@@ -1,10 +1,10 @@
 const mysql = require('mysql');
 
 const connection = mysql.createConnection({
-  host: 'alexadatabase.cvoyxhepfo1u.us-east-1.rds.amazonaws.com',
-  user: 'alexadb',
+  host: 'smart-nutrition-database.cpql6yxingst.us-east-1.rds.amazonaws.com',
+  user: 'admin',
   password: 'Alexa2019',
-  database: 'AlexaDatabase'
+  database: 'SmartNutritionDB'
 });
 
 const connectDB = async () => {
