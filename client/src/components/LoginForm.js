@@ -22,7 +22,7 @@ class LoginForm extends Form {
   };
 
   doSubmit = async () => {
-    const {data:user} = await axios.post('http://localhost:5000/auth', {email: this.state.data.username, password: this.state.data.password});
+    const {data:user} = await axios.post('http://ec2-54-252-240-52.ap-southeast-2.compute.amazonaws.com:5000/auth', {email: this.state.data.username, password: this.state.data.password});
 
     if (user) {
       this.props.authUser(true);
