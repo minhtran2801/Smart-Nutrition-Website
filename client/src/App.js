@@ -199,8 +199,8 @@ class App extends Component {
       userDataWeeklySummed = [];
       userDataDailySummed = [];
 
-      const {data:userScans} = await axios.get(`http://localhost:5000/scans/${emails[i]}`);
-      const {data:userAnalyses} = await axios.get(`http://localhost:5000/analyses/${emails[i]}`);
+      const {data:userScans} = await axios.get(`http://ec2-54-252-240-52.ap-southeast-2.compute.amazonaws.com:5000/scans/${emails[i]}`);
+      const {data:userAnalyses} = await axios.get(`http://ec2-54-252-240-52.ap-southeast-2.compute.amazonaws.com:5000/analyses/${emails[i]}`);
 
       userScans.forEach(userScan => {
         let found = userAnalyses.find(
@@ -782,7 +782,7 @@ class App extends Component {
       this.setDefaultPeriod();
       this.loadData([selectedUser]);
 
-      const {data:{gender, weight, height, dob}} = await axios.get(`http://localhost:5000/users/${selectedUser}`)
+      const {data:{gender, weight, height, dob}} = await axios.get(`http://ec2-54-252-240-52.ap-southeast-2.compute.amazonaws.com:5000/users/${selectedUser}`)
 
       this.setState({ gender, weight, height, dob }, () =>
         this.loadAnnotation()
@@ -798,7 +798,7 @@ class App extends Component {
       if (!selectedGenders.includes('male') && selectedGenders.includes('female')){
         genQuery = 'f';
       }
-      const {data:retrievedUsers} = await axios.get(`http://localhost:5000/users?g=${genQuery}&wfrom=${weightFrom}&wto=${weightTo}&hfrom=${heightFrom}&hto=${heightTo}`);
+      const {data:retrievedUsers} = await axios.get(`http://ec2-54-252-240-52.ap-southeast-2.compute.amazonaws.com:5000/users?g=${genQuery}&wfrom=${weightFrom}&wto=${weightTo}&hfrom=${heightFrom}&hto=${heightTo}`);
 
       this.setState({ numberOfRetrievedUsers: retrievedUsers.length });
       this.setDefaultPeriod();
